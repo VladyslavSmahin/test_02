@@ -1,0 +1,53 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+#myForm{
+    max-width: 20vw;
+    padding: 20px;
+    border: 1px black solid;
+    border-radius: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 15px;
+    z-index: 1001;
+}
+#myForm > *{
+    margin-bottom: 10px;
+}
+#myForm input{
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    border: wheat 1px solid;
+    color: wheat;
+}
+#myForm label{
+    color: wheat;
+}
+#myForm button{
+    background-color: black;
+    border-radius: 10px;
+    border: wheat 1px solid;
+    padding: 10px;
+    color: wheat;
+}
