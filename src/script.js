@@ -153,13 +153,17 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 let N = 0;
 
+document.getElementById('diameter').addEventListener('change', () => {
+    N = document.getElementById('diameter').value;
+})
+document.getElementById('myForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
 window.addEventListener("click", (e) => {
-    if (e.target.closest('#myForm')){
-        e.preventDefault();
-        N = document.getElementById('diameter').value;
-        document.getElementById('diameter').value = '';
-    }
+
     if (!e.target.closest('#myForm')){
+        console.log(N)
         mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
 
@@ -187,7 +191,6 @@ window.addEventListener("click", (e) => {
         }
 
         if (closestParticle !== null) {
-            console.log("Попали в частицу №", closestParticle);
 
             const color = new THREE.Color(Math.random(), Math.random(), Math.random());
 
@@ -221,8 +224,6 @@ window.addEventListener("click", (e) => {
             });
 
             particleColors.needsUpdate = true;
-
-            console.log("Новый цвет:", color);
         }
     }
 });
